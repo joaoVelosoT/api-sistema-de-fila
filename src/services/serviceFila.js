@@ -64,12 +64,16 @@ const ServiceFila = {
     },
     proxLista : async () => {
         try {
+
             // Puxando o get pendentes
             const proxLista = await ServiceFila.pendentes();
+            return proxLista[0];
 
+            console.log("Proximo da lista ", proxLista[0].id, proxLista[0].status);
+            
+            // await ServiceFila.update();
             
             // Retornando o proximo da lista
-            return proxLista[0];
 
         } catch (error) {
             console.error(error);
