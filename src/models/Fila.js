@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const Schema  = mongoose.Schema;
 
 const filaSchema = new Schema({
+    senha : {
+        type : Number,
+        required : true,
+        unique : true
+    },
     nome : {
         type : String,
         required : true
