@@ -9,6 +9,7 @@ const connect = async () => {
     const PASS_DB = process.env.PASS_DB;
     await mongoose.connect(
       `mongodb+srv://${HOST_DB}:${PASS_DB}@sistemadefila.nmed5.mongodb.net/?retryWrites=true&w=majority&appName=SistemaDeFila`
+
     );
     console.log("Conectado com sucesso !");
 

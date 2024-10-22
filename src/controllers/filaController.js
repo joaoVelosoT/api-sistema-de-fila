@@ -4,11 +4,12 @@ const ServiceFila = require("../services/serviceFila");
 const FilaController = {
     create : async (req,res) => {
         try {
-
+            console.log(await proxSenha());
             const data = {
                 nome : req.body.nome,
-                status : req.body.status
-            }  
+                status : req.body.status,
+                senha : await proxSenha()
+            } 
 
             const fila = await ServiceFila.create(data);
 
@@ -178,7 +179,20 @@ const FilaController = {
                 msg : "Erro, contate o suporte"
             })
         }
-    }
+    },
 }
+
+
+const proxSenha = async() => {
+    const users = await ServiceFila.getAll();
+    const tamanho = users.length - 1
+    console.log(tamanho)
+    if(tamanho < 0){
+        return 1
+    }
+    return users[tamanho].senha + 1
+}
+
+
 
 module.exports = FilaController;

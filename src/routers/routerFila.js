@@ -13,7 +13,7 @@ router.get('/cancelados', FilaController.cancelados);
 router.post('/', ValidateFila, FilaController.create);
 router.get('/', FilaController.getAll);
 router.get('/:id', ValidateFilaID, FilaController.getOne);
-router.put('/:id', ValidateFilaID, ValidateFila, FilaController.update);
+router.put('/:id', ValidateFilaID,  FilaController.update);
 router.delete('/:id',ValidateFilaID, FilaController.delete);
 
 

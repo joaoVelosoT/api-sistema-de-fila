@@ -4,6 +4,7 @@ const Fila = require("../models/Fila");
 const ServiceFila = {
     create : async (data) => {
         try {
+            
             return await Fila.create(data);
 
         } catch (error) {
