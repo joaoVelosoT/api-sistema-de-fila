@@ -72,6 +72,7 @@ const FilaController = {
                 nome : req.body.nome,
                 status : req.body.status
             }  
+
             const fila = await ServiceFila.update(id, data);
 
             if(null) {
