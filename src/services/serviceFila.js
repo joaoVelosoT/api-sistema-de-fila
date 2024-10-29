@@ -117,6 +117,21 @@ const ServiceFila = {
             throw new Error("Erro ao tentar saber os concluidos da fila");
         }
     },
+    getPorSenha : async (senha) => {
+        try {
+            
+            const user = await Fila.findOne().where('senha').equals(senha)
+            console.log(user)
+            if(!user){
+                return null
+            }
+            return user
+        } catch (error) {
+            console.error(error);
+            throw new Error("Erro ao fazer get por senha");
+        }
+    }
+
 }
 
 module.exports = ServiceFila;

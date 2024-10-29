@@ -181,6 +181,29 @@ const FilaController = {
             })
         }
     },
+    getPorSenha : async (req,res) => {
+        try {
+            const {senha} = req.params
+
+            const user = await ServiceFila.getPorSenha(senha);
+
+            if(!user){
+                return res.status(400).json({
+                    msg : "Usuario não encontrado"
+                })
+            }
+
+            return res.status(200).json({
+                user
+            })
+
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({
+                msg : "Erro, contate o suporte"
+            })
+        }
+    }
 }
 
 

@@ -8,6 +8,7 @@ router.get('/proxlista', FilaController.proxLista);
 router.get('/pendentes', FilaController.pendentes);
 router.get('/concluidos', FilaController.concluidos);
 router.get('/cancelados', FilaController.cancelados);
+router.get('/getPorSenha/:senha', FilaController.getPorSenha);
 
 // Rotas padrões do crud
 router.post('/', ValidateFila, FilaController.create);
